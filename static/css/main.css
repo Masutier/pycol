@@ -1,0 +1,108 @@
+.cont {
+    width: auto;
+    height: 40%;
+    color: #f9f9f9;
+    background: #2b5b84;
+}
+
+.txtalig {
+    text-align: justify;
+}
+
+.lists {
+    list-style: none;
+    list-style-image: url('/static/img/icons/pyicon3a.png');
+    color: #444;
+    text-decoration: none;
+}
+
+.listas {
+    list-style: none;
+    text-decoration: none;
+}
+
+.backbuttdark {
+    color: fff;
+    background-image: linear-gradient(#11171d, #273643);
+    background: linear-gradient(#11171d, #273643);
+}
+
+.backbuttdark:hover {
+    color: fff;
+    background-image: linear-gradient(#273643, #11171d);
+    background: linear-gradient(#273643, #11171d);
+}
+
+.bannbutt {
+    color: fff;
+    background-image: linear-gradient(rgb(17, 23, 29, 0.2), rgb(39, 54, 67, 0.2));
+    background: linear-gradient(rgb(17, 23, 29, 0.2), rgb(39, 54, 67, 0.2));
+    border: none;
+    width: 3rem;
+}
+
+.bannbutt:hover {
+    color: fff;
+    background-image: linear-gradient(rgb(39, 54, 67, 0.3), rgb(17, 23, 29, 0.3));
+    background: linear-gradient(rgb(39, 54, 67, 0.3), rgb(17, 23, 29, 0.3));
+}
+
+/* NAVSEARCH */
+
+.baksearch {
+    color: fff;
+    background-image: linear-gradient(#273643, #11171d);
+}
+
+.backbutt {
+    background-image: linear-gradient(#3776ab 30%, #2d618c 95%);
+    color: white;
+}
+
+.backbutt:hover {
+    background-image: linear-gradient(#254158 30%, #0e283d 95%);
+    color: white;
+}
+
+
+/* Comunidad */
+
+.card-img-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-wrap:after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.3);
+    opacity: 0;
+    transition: .25s;
+}
+
+.card-img-wrap img {
+    transition: transform .25s;
+    width: 100%;
+}
+
+.card-img-wrap:hover img {
+    transform: scale(1.2);
+}
+
+.card-img-wrap:hover:after {
+    opacity: 0;
+}
+
+
+/* blog */
+
+.backblogfoot {
+    background-image: linear-gradient(rgb(55, 118, 171, 0.5) 30%, rgb(45, 97, 140, 0.5) 95%);
+    color: #f9f9f9;
+}
+
+.bordrad {
+    border: solid 1px #254158 !important;
+    border-radius: 5px;
+}

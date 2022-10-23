@@ -1,0 +1,7 @@
+
+sitio recaptcha
+https://pypi.org/project/django-recaptcha/#requirements
+set keys
+https://www.google.com/recaptcha/about/
+explica en spanish
+https://www.youtube.com/watch?v=M1jkZx2crBg

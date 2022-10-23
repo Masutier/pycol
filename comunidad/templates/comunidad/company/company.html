@@ -1,0 +1,16 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-12 mx-auto cont c">
+    <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
+    <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+</div>
+<div class="col-12 mx-auto  c">
+    <h2>Companies</h2>
+    {% for empresa in empresas %}
+        <h3>empresa</h3>
+    {% endif %}
+</div>
+
+{% endblock %}

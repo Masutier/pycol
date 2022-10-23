@@ -1,0 +1,108 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-12 mx-auto cont c">
+    <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
+    <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+</div>
+
+<div class="col-12 row mt-3 p-4">
+
+    <div class="col-8 mx-auto p-5 bordrad">
+        <div class="row">
+            <div class="col-9">
+                <h2 class="card-title">{{blog.title}}</h2>
+            </div>
+            <div class="col-3">
+                <small class="text-muted">{{blog.date_add}}</small>
+            </div>
+        </div>
+            <p><strong>{{blog.intro}}</strong></p>
+            <p>{{blog.body}}</p>
+    </div>
+
+    <div class="col-4 mx-auto p-3 bordrad">
+        <h4>Comentarios...</h4>
+        <hr>
+
+        {% if not blog.comments.all %}
+            <div class="col-9">
+                <p>No comments yet</p>
+            </div>
+        {% else %}
+            {% for comment in blog.comments.all %}
+                <div class="row">
+                    <div class="col-9">
+                        <h4 class="card-title">{{ comment.user.first_name }} {{ comment.user.last_name }}</h4>
+                    </div>
+                    <div class="col-3">
+                        <small class="text-muted">{{ comment.date_add }}</small>
+                    </div>
+                </div>
+                    <p>{{ comment.body }}</p>
+                <hr>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="col-9 mx-auto mt-3 p-3 bordrad">
+
+        <h4 class="subtitle">Hacer Un Comentario...</h4>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="col-12 row mx-auto">
+                <div class="col-5 mt-3 ">
+                    <label>blog :</label>
+                    {{form.comm}}
+                </div>
+                <div class="col-5 mt-3 ">
+                    <label>user :</label>
+                    {{form.user}}
+                </div>
+                <div class="col-5 mt-3 ">
+                    <label>post :</label>
+                    {{form.body}}
+                </div>
+            </div>
+
+            <button class="btn btn-dark backbuttdark">Crear Comentario</button>
+        </form>
+    </div>
+</div>
+
+<div class="col-12 row mt-5 p-4">
+    <div id="past" class="col-12 mx-auto">
+        {% include 'blog/partials/blog_past.html' %}
+    </div>
+    <div class="col-3">
+        <div class="col-12 mx-auto p-2 c">
+            <h3 class="p-3">Temario</h3>
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Eventos Proximos</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Eventos Proximos</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Eventos Proximos</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-9">
+        <div class="col-12 mt-2 mb-5">
+            <div class="col-11 mx-auto mt-3 ">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    {% for blog in oldBlogs %}
+
+                        {% include 'blog/partials/card.html' %}
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

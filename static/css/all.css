@@ -1,0 +1,103 @@
+/* common */
+
+body {
+    font: normal 100%/1.625 SourceSansProRegular, Arial, sans-serif;
+    color: #444;
+    background: #f9f9f9;
+
+}
+.a {
+    text-decoration: none;
+    color: #11171d;
+}
+.borde {
+    border: solid 1px black !important;
+}
+.c {
+    text-align: center !important;
+}
+.hidden {
+    display: none;
+}
+.hr {
+    color: rgb(194, 194, 242);
+    height: 3px !important;
+}
+.stic {
+    position: sticky;
+    top: 0px;
+}
+.sticky {
+    position: sticky;
+    top: 10px;
+}
+
+/* navbart */
+
+.navtext {
+    color: rgba(255, 255, 255, 0.55);
+}
+.imgnav {
+    width: 180px;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+    -webkit-margin-bottom-collapse: initial;
+    margin-right: 30PX;
+    padding-top: 2px;
+    padding-left: 30px;
+    z-index: 1000;
+}
+
+.navigation {
+    color: rgba(255, 255, 255, 0.55);
+    background-image: linear-gradient(#11171d, #273643);
+    background: linear-gradient(#11171d, #273643);
+}
+
+.navigation:hover {
+    color: fff;
+    background-image: linear-gradient(#273643, #11171d);
+    background: linear-gradient(#273643, #11171d);
+}
+
+/* footer */
+
+.b-fixed{
+    position: fixed !important;
+    bottom: 10px;
+    z-index: 1;
+}
+
+.back-black {
+    color: rgba(255, 255, 255, 0.55);
+    background-image: linear-gradient(#11171d, #273643);
+    background: linear-gradient(#11171d, #273643);
+}
+
+/* back-to-top */
+
+.backtotop {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(#3776ab 30%, #2d618c 95%);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-top: 1px solid #629ccd;
+    border-bottom: 1px solid #18334b;
+    border-radius: 4px;
+}
+
+.backtotop:hover {
+    background-image: linear-gradient(#254158 30%, #0e283d 95%);
+    color: white;
+}
+
+

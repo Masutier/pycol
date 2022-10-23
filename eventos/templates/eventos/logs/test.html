@@ -1,0 +1,129 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-12 mx-auto cont c">
+    <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
+    <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+</div>
+
+<div class="col-12 mt-2 p-4">
+    <div class="col-11 mx-auto c">
+        <h2 class="p-3">Creacion de Eventos</h2>
+        <h4>Recomendaciones para la creacion de un evento</h4>
+
+    </div>
+    <div class="col-11 mx-auto c">
+        <p>1 Foto de 800 * 600 para la tarjeta de despliegue - radio de aspecto 1 a 1.33</p>
+        <p>1 flayer de 1000 * 1400 - radio de aspecto 1 a 0.71</p>
+        <p>1 Foto de 1000 * 140 para el banner - radio de aspecto 1 a 7.15</p>
+        <p>El backend ajusta las fotos a esas medidas automaticamente y podria desfigurar las imagenes si por lo menos el radio de aspecto no es parecido</p>
+    </div>
+</div>
+
+<div class="col-12 row mt-3 p-4">
+    <div class="col-8 mx-auto c">
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+            <div class="col-6 mx-auto">
+                <div class="mb-3">
+                    <label for="organiza" class="form-label">Quien organiza el evento</label>
+                    <input type="text" class="form-control" id="organiza" name="organiza" placeholder="Organizador">
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Titulo</label><br>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                </div>
+                <div class="mb-3">
+                    <label for="web" class="form-label">Sitio Web</label>
+                    <input type="text" class="form-control" id="web" name="web" placeholder="Web">
+                </div>
+            </div>
+
+            <div class="col-8 row mx-auto mt-5 mb-5">
+                <div class="col-5 mx-auto ">
+                    <label for="date_start" class="form-label">Fecha de inicio del Evento</label>
+                    <input type="datetime-local" class="form-control" id="date_start" name="date_start" placeholder="start">
+                </div>
+                <div class="col-5 mx-auto ">
+                    <label for="date_end" class="form-label">Fecha de Termino del Evento</label>
+                    <input type="datetime-local" class="form-control" id="date_end" name="date_end" placeholder="end">
+                </div>
+            </div>
+
+            <div class="col-6 mx-auto mb-3">
+                <div class="mb-3">
+                    <label for="body" class="form-label">Descripción del Evento</label>
+                    <textarea class="form-control" id="body" name="body" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="col-6 mx-auto mb-3">
+                <label for="location" class="form-label">Direccion</label>
+                <input type="text" class="form-control" id="location" name="location" placeholder="Location">
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-4">
+                    <label for="city" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Ciudad">
+                </div>
+                <div class="col-4">
+                    <label for="state" class="form-label">Departamento</label>
+                    <input type="text" class="form-control" id="state" name="state" placeholder="Departamento">
+                </div>
+                <div class="col-4">
+                    <label for="country" class="form-label">Pais</label>
+                    <input type="text" class="form-control" id="country" name="country" placeholder="Pais">
+                </div>
+            </div>
+
+            <div class="col-8 row mx-auto mb-3">
+                <div class="col-4 mx-auto">
+                    <label for="longitud" class="form-label">longitud</label>
+                    <input type="text" class="form-control" id="longitud" name="longitud" placeholder="long">
+                </div>
+                <div class="col-4 mx-auto">
+                    <label for="latitud" class="form-label">latitud</label>
+                    <input type="text" class="form-control" id="latitud" name="latitud" placeholder="Lat">
+                </div>
+                
+            </div>
+
+            <div class="col-8 mx-auto mt-4">
+                <div class="mb-3">
+                    <label for="picture" class="form-label">Foto del Evento <small>(800 X 600)</small></label>
+                    <input class="form-control" type="file" id="picture" name="picture">
+                </div>
+                <div class="mb-3">
+                    <label for="flayer" class="form-label">flayer del Evento <small>(1000 X 1400)</small></label>
+                    <input class="form-control" type="file" id="flayer" name="flayer">
+                </div>
+                <div class="mb-3">
+                    <label for="banner" class="form-label">banner del Evento <small>(1000 X 140)</small></label>
+                    <input class="form-control" type="file" id="banner" name="banner">
+                </div>
+            </div>
+
+            <div class="col-4 mx-auto mt-4">
+                <label for="user" class="form-label">Entidad o persona que organiza el evento</label>
+                <input type="text" class="form-control" id="user" name="user">
+            </div>
+            <div class="col-2 mx-auto mt-4">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="status" name="status" checked>
+                    <label class="form-check-label" for="status">Activar Evento</label>
+                </div>
+            </div>
+
+            <div class="col-6 mx-auto mt-5 mb-5">
+                <input class="btn btn-dark backbuttdark" type="submit" value="CREAR PRODUCTO">
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,75 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-12 mx-auto cont c">
+    <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
+    <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+</div>
+
+<div class="col-12 mt-2">
+    <div class="col-8 mx-auto p-2 ">
+        <h3 class="p-3">Python Blog</h3>
+        <p class="txtalig">Siempre motivados a crecer mucho más y totalmente comprometidos a promover la diversidad y la inclusión en cada una de nuestras actividades y eventos.</p>
+    </div>
+
+    <div class="col-12 mt-2 mb-5">
+        <div id="tocome" class="col-12 mx-auto  p-4">
+            {% include 'blog/partials/blog_now.html' %}
+        </div>
+        <div class="col-11 mx-auto mt-3 ">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                {% for blog in newblogs %}
+                    <a class="a" href="{% url 'blogDetail' blog.slug %}">
+                        {% include 'blog/partials/card.html' %}
+                    </a>
+                {% endfor %}
+
+            </div>
+            <div class="col-md-8 mx-auto mt-3">
+                <!-- {% if totalProducts > 12 %}
+                    {% include 'pycol/partials/pagination.html' %}
+                {% endif %} -->
+                {% include 'pycol/partials/pagination.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 row mt-2 p-4">
+    <div id="past" class="col-12 mx-auto">
+        {% include 'blog/partials/blog_past.html' %}
+    </div>
+    <div class="col-3">
+        <div class="col-12 mx-auto mt-5 c">
+            <h3 class="p-3">Temario</h3>
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Eventos Proximos</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Eventos Proximos</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Eventos Proximos</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-9">
+        <div class="col-12 mt-5 mb-5">
+
+                <div class="col-11 mx-auto">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        {% for blog in oldBlogs %}
+                            <a class="a" href="{% url 'blogDetail' blog.slug %}">
+                                {% include 'blog/partials/card.html' %}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

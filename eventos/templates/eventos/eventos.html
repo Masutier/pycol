@@ -1,0 +1,104 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="col-12 mx-auto cont c">
+    <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
+    <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+</div>
+
+<div class="col-12 row mt-2 p-4">
+    <div class="col-3">
+        <div class="col-11 mx-auto p-4 c">
+            <h3 class="p-3">Eventos</h3>
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                <a class="btn btn-dark backbuttdark" type="button" href="crearEvento"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> Crear Evento</a>
+                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-9">
+        <div class="col-11 mx-auto p-4 ">
+            <h3 class="p-3">Nuestra Comunidad</h3>
+            <p class="txtalig">Somos una comunidad enfocada en extender en el territorio nacional el uso y aprendizaje de las distintas tecnologías Python y sus numerosas aplicaciones.</p>
+
+            <p class="txtalig">Nuestra comunidad está conformada por personas con diferentes niveles de conocimiento siempre dispuestas a aprender y compartir nuestro saber mostrando una gran empatía y respeto hacia los demás.</p>
+                
+            <p class="txtalig">Siempre motivados a crecer mucho más y totalmente comprometidos a promover la diversidad y la inclusión en cada una de nuestras actividades y eventos.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 mt-2 mb-5">
+    <div class="col-11 mx-auto">
+
+        <div id="tocome" class="col-12 mx-auto">
+            {% include 'eventos/partials/next.html' %}
+        </div>
+
+        <div class="col-11 mx-auto">
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+
+                {% for evento in eventos_actuales %}
+                    <div class="card mb-3 ms-2" >
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{ evento.flayer.url }}" class="img-fluid rounded-start" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ evento.title }}</h5>
+                                    {{ evento.location }} <br>
+                                    {{ evento.city }}, {{ evento.country }} <br>
+                                    <small class="text-muted">start {{ evento.date_start }}</small> <br>
+                                    <small class="text-muted">end {{ evento.date_end }}</small> <br>
+                                    <a class="btn btn-dark backbuttdark mt-2" type="button" href="{{ evento.get_event_absolute_url }}">Detalle</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-12 mt-2 mb-5">
+    <div class="col-11 mx-auto">
+
+        <div id="past" class="col-12 mx-auto">
+            {% include 'eventos/partials/past.html' %}
+        </div>
+
+        <div class="col-11 mx-auto">
+            <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+
+                {% for evento in eventos_pasados %}
+                    <div class="card mb-3 ms-2" >
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{ evento.flayer.url }}" class="img-fluid rounded-start" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ evento.title }}</h5>
+                                    {{ evento.location }} <br>
+                                    {{ evento.city }}, {{ evento.country }} <br>
+                                    <small class="text-muted">end {{ evento.date_end | naturalday }}</small> <br>
+                                    <a class="btn btn-dark backbuttdark mt-2" type="button" href="{{ evento.get_event_absolute_url }}">Detalle</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="col-12 row mt-3 p-4">
+    <div class="col-8 mx-auto c">
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <div class="col-6 mx-auto mt-5 mb-5">
+                <input class="btn btn-dark backbuttdark" type="submit" value="REGISTRAR EMPRESA">
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock content %}

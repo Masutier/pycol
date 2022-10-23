@@ -1,0 +1,69 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="col-12 mx-auto cont c">
+    <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
+    <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+</div>
+
+<div class="col-12 row mx-auto">
+    <div class="col-9">
+        <div class="col-12 row mt-2 p-4">
+            <div class="col-6">
+                <div class="col-11 mx-auto p-4 ">
+                    <h3 class="p-3">Nuestra Comunidad</h3>
+                    <p class="txtalig">Somos una comunidad enfocada en extender en el territorio nacional el uso y aprendizaje de las distintas tecnologías Python y sus numerosas aplicaciones.</p>
+                    <p class="txtalig">Nuestra comunidad está conformada por personas con diferentes niveles de conocimiento siempre dispuestas a aprender y compartir nuestro saber mostrando una gran empatía y respeto hacia los demás.</p>
+                    <p class="txtalig">Siempre motivados a crecer mucho más y totalmente comprometidos a promover la diversidad y la inclusión en cada una de nuestras actividades y eventos.</p>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="col-11 mx-auto p-4">
+                    <h3 class="p-3">Quienes Somos</h3>
+                    <p>Python Colombia es una comunidad unida, orgullosa de lo que hacemos, Es por eso que estamos conformados por grupos distribuidos a lo largo del territorio nacional.</p>
+                    <p>Todos Juntos</p>
+                    <ul class="lists" >
+                        <li>Pythonistas [150]</li>
+                        <li>Empresas [35]</li>
+                        <li>Comunidades [25]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 mb-4">
+            <div class="col-12 mx-auto">
+                {% include 'eventos/partials/next.html' %}
+            </div>
+            {% if mess == 0 %}
+                <div class="col-11 mx-auto mt-3">
+                    <div class="alert alert-dark" role="alert">
+                        {{ mess }}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="col-11 mx-auto mt-3">
+                {% include 'eventos/partials/carrousel.html' %}
+            </div>
+        </div>
+
+        <div class="col-12 mt-5 mb-4">
+            <div class="col-12 mx-auto">
+                {% include 'pycol/partials/navcoment.html' %}
+            </div>
+            <div class="col-11 row mx-auto mt-3">
+                {% include 'blog/partials/mainblog.html' %}
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+        <a class="twitter-timeline" data-lang="en" data-height="1500" data-theme="dark" href="https://twitter.com/ColombiaPython?ref_src=twsrc%5Etfw">Tweets by ColombiaPython</a>
+    </div>
+</div>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+{% endblock %}

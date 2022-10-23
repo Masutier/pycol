@@ -1,0 +1,60 @@
+Colores python page
+
+font: normal 100%/1.625 SourceSansProRegular, Arial, sans-serif;
+font: normal 100%/1.625 SourceSansProRegular, Arial, sans-serif;
+
+navbar
+#11171d
+#273643
+font
+#fff
+
+
+
+
+text-rendering: optimizeLegibility;
+
+
+    color: #bbb;
+    background-color: #1e2933;
+    border-bottom: 1px solid #1f3b47;
+
+#75a8d3
+#3776ab
+#2b5b84
+#2d618c
+#2b5b84
+
+Buttons
+background-image: linear-gradient(#3776ab 30%, #2d618c 95%);
+border-top: 1px solid #629ccd;
+border-bottom: 1px solid #18334b;
+
+#ffd343
+
+ackground-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(10%, #ffdf76), color-stop(90%, #ffd343)); */
+    background-image: -moz-linear-gradient(#ffdf76 10%, #ffd343 90%);
+    background-image: -webkit-linear-gradient(#ffdf76 10%, #ffd343 90%);
+    background-image: linear-gradient(#ffdf76 10%, #ffd343 90%);
+    border-top: 1px solid #dca900;
+    border-right: 1px solid #dca900;
+    border-bottom: 1px solid #dca900;
+    border-left: 1px solid #dca900;
+
+
+
+border: 1px solid #caccce;
+    
+background-image: -webkit-linear-gradient(#e6e8ea 10%, #d8dbde 90%);
+background-image: linear-gradient(#e6e8ea 10%, #d8dbde 90%);
+-moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.01);
+-webkit-box-shadow: inset 0 0 10px rgb(0 0 0 / 1%);
+box-shadow: inset 0 0 10px rgb(0 0 0 / 1%);
+    
+    
+#89b4d9
+
+    
+    
+#mapid
+

@@ -1,0 +1,45 @@
+{% load static %}
+
+<div class="col-12 mt-2 pb-5 cont ">
+    <div class="col-10 row mx-auto p-3 c backcol3 ">
+
+        <div class="col-lg-3 mx-auto p-2 c ">
+            <h3 class="p-3">Contáctanos</h3>
+            <div>
+                <p>Lunes a Viernes de 9 a.m. a 5 p.m</p>
+                <div>
+                    <h5><span>(+57) 319 403 6153</span></h5>
+                </div>
+                <div>
+                    <h6>colombiapython@gmail.com</h6>
+                </div>
+                <div>
+                    <h6>Bogotá, Colombia</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 mx-auto p-2 c ">
+            <div class="col-11 mx-auto c">
+                <h3 class="p-3">Síguenos</h3>
+                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                    <a class="btn btn-dark backbuttdark" type="button" href="https://web.facebook.com/mizanahora/?__tn__=%2Cd%3C-R&eid=ARBYRD6eSO9hRIhZ1G1CLKzVGPZVfkYQRkpulsoN_oxPOFukGfMOc4iXI47Jma-GHcQhm6hqbfmUmn1S" target="_blank" rel="noreferrer noopener"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> Facebook</a>
+                    <a class="btn btn-dark backbuttdark" type="button" href="https://www.instagram.com/colombiapython/"><img src="{% static '/img/icons/pyicon3a.png' %}" target="_blank" rel="noreferrer noopener"/> Instagram</a>
+                    <a class="btn btn-dark backbuttdark" type="button" href="https://twitter.com/ColombiaPython"><img src="{% static '/img/icons/pyicon3a.png' %}" target="_blank" rel="noreferrer noopener"/> Twitter</a>
+                    <a class="btn btn-dark backbuttdark" type="button" href="https://www.youtube.com/c/PythonColombia"><img src="{% static '/img/icons/pyicon3a.png' %}" target="_blank" rel="noreferrer noopener"/> YouTube</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 mx-auto p-2 c ">
+            <div class="col-11 mx-auto c">
+                <h3 class="p-3">Información</h3>
+                <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                    <a class="btn btn-dark backbuttdark" type="button" href="{% url 'conducta' %}"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> Codigo de Conducta</a>
+                    <a class="btn btn-dark backbuttdark" type="button" href="{% url 'privacy' %}"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> Politica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>

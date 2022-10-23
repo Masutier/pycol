@@ -1,0 +1,54 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-12 mx-auto cont c">
+    <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
+    <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+</div>
+<div class="col-12 mx-auto  c">
+    <img src="{{ evento.banner.url }}" class="pt-2 pb-3" alt="">
+
+    <div class="col-11 mx-auto c">
+        <h2>{{ evento.title }}</h2>
+        <p>Organiza: {{ evento.organiza }} </p>
+    </div>
+
+    <div class="col-11 row mx-auto">
+        <div class="col-8 p-4">
+            <h3>Detalles</h3>
+
+            <div class="col-11 mx-auto c">
+
+                <div class="col-12 mx-auto row">
+                    <div class="col-11 c">
+                        <p>Dia del evento: {{ evento.date_start }}  ~/~  Finaliza: {{ evento.date_end }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-11 mx-auto c">
+                <p class="txtalig">{{ evento.body }}</p>
+            </div>
+
+            <div class="col-11 mx-auto">
+                    <h5>Contacto</h5>
+                    <p>{{ evento.user.first_name }} {{ evento.user.last_name }} - {{ evento.user.profile.phone }}</p>
+            </div>
+
+        </div>
+        <div class="col-4 mx-auto p-4">
+            <h3>Lugar</h3>
+                <h4>{{ evento.location }}</h4>
+            <div class="col-10 row mx-auto ">
+                <h5>{{ evento.city }},
+                {{ evento.state }}
+                {{ evento.country }}</h5>
+            </div>
+            <img src="{{ evento.flayer.url }}" class="img-fluid rounded-start mt-3" alt="">
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

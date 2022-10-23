@@ -1,0 +1,34 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-12 mx-auto cont c">
+    <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
+    <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+</div>
+<div class="col-12 mx-auto  c">
+    <img src="{{ user.profile.image.url }}" class="pt-2 pb-3" alt="">
+
+    <div class="col-11 mx-auto c">
+        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+    </div>
+
+    <div class="col-11 row mx-auto">
+        <div class="col-8 p-4">
+            <h3>Detalles</h3>
+            <p class="txtalig">{{ user.information }}</p>
+
+            <div class="col-11 row">
+                {% if user.profile.sharePhone == True %}
+                    <div class="col-6">
+                        <h5>Contacto</h5>
+                        <h4>{{ user.profile.phone }}</h4>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

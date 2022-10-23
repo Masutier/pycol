@@ -1,0 +1,45 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-12 row mt-3 p-4 c">
+    <h2>Registro de Usuario</h2>
+</div>
+
+<div class="col-12 row mt-3 p-4">
+    <div class="col-8 mx-auto c">
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+            {{ user_form.as_p}}
+
+            <div class="col-6 mx-auto mt-5 mb-5">
+                <input class="btn btn-dark backbuttdark" type="submit" value="REGISTRAR USUARIO">
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<div class="col-12 row mt-3 p-4 c">
+    <h2>Crear el Perfil del Usuario</h2>
+</div>
+
+<div class="col-12 row mt-3 p-4">
+    <div class="col-8 mx-auto c">
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+            {{ profile_form.as_p}}
+
+            <div class="col-6 mx-auto mt-5 mb-5">
+                <input class="btn btn-dark backbuttdark" type="submit" value="REGISTRAR PERFIL DEL USUARIO">
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'pycol/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-12 mx-auto cont c">
+    <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
+    <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+</div>
+
+<div class="col-12 mt-2 p-4">
+    <div class="col-11 mx-auto c">
+        <h2 class="p-3">Creacion de Eventos</h2>
+        <h4>Recomendaciones para la creacion de un evento</h4>
+
+    </div>
+    <div class="col-11 mx-auto c">
+        <p>1 Foto de 800 * 600 para la tarjeta de despliegue - radio de aspecto 1 a 1.33</p>
+        <p>1 flayer de 1000 * 1400 - radio de aspecto 1 a 0.71</p>
+        <p>1 Foto de 1000 * 140 para el banner - radio de aspecto 1 a 7.15</p>
+        <p>El backend ajusta las fotos a esas medidas automaticamente y podria desfigurar las imagenes si por lo menos el radio de aspecto no es parecido</p>
+    </div>
+</div>
+
+<div class="col-12 row mt-3 p-4">
+    <div class="col-8 mx-auto c">
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+            {{ form.as_p}}
+
+            <div class="col-6 mx-auto mt-5 mb-5">
+                <input class="btn btn-dark backbuttdark" type="submit" value="CREAR EVENTO">
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock content %}
