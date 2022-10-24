@@ -70,8 +70,8 @@ def loginPage(request):
 
 def userLogout(request):
     logout(request)
-    context = {'title':'Login'}
-    return render(request, 'comunidad/people/login.html', context)
+    messages.info(request, 'Gracias por tu visita, Te estaremos esperando!')
+    return redirect('/')
 
 
 @login_required

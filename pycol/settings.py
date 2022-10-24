@@ -1,10 +1,14 @@
 import os
+import json
 from pathlib import Path
 from dotenv import load_dotenv
 
+with open('/home/gabriel/prog/json_config/pycol.json') as config_file:
+    config = json.load(config_file)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = config['SECRET_KEY']
 
 DEBUG = True
 
@@ -77,12 +81,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config['EMAIL_USER']
+EMAIL_HOST_PASSWORD = config['EMAIL_PASSWORD']
+
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'America/Bogota'
-
 USE_I18N = True
-
 USE_TZ = True
 
 # PRODUCTION
