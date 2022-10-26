@@ -11,8 +11,10 @@ from .forms import *
 
 def comunidad(request):
     users = User.objects.all()
+    comunidades = Comunity.objects.all()
+    empresas = Company.objects.all()
     
-    context = {'title': 'Comunidad', 'users':users}
+    context = {'title': 'Comunidad', 'users':users, 'comunidades':comunidades, 'empresas':empresas}
     return render(request, 'comunidad/comunidad.html', context)
 
 
@@ -20,26 +22,24 @@ def comunidad(request):
 def peopleRegister(request):
     if request.method == 'POST':
         user_form = CreateUserForm(request.POST)
-        profile_form= ProfileForm(request.POST)
+        profile_form= ProfileForm(request.POST, request.FILES)
 
         regEmail = request.POST.get('inputmail')
         phone = request.POST.get('phone')
         
         if user_form.is_valid and profile_form.is_valid:
             # user = user_form.save()
-            group = Group.objects.get(name='usuario')
+            group = Group.objects.get(name='user')
             # user.groups.add(group)
             # user.save()
             userprofile = profile_form.save(commit=False)
-            userprofile.user = user
 
             num = str(profile_form.cleaned_data.get('phone'))
             if len(num) == 10:
                 phoneNum = ("("+num[:3]+")"+num[3:6]+"-"+num[6:])
 
-            print('phone', phone)
             userprofile.phone = phoneNum
-            # userprofile.save()
+            userprofile.save()
             messages.success(request, f'La cuenta fue creada, ya puedes Iniciar sesión!')
             return redirect('main')
         else:
@@ -91,29 +91,55 @@ def allusers(request):
 
 # --------------- COMUNIDADES ---------------
 def comunity(request):
-    comunidades = Comunidad.objects.all()
+    comunidades = Comunity.objects.all()
     
     context = {'title': 'Comunity', 'comunidades':comunidades}
     return render(request, 'comunidad/comunity/comunity.html', context)
 
 
 def comunityRegister(request):
-    form = ComunidadForm()
+    if request.method == 'POST':
+        form = ComunityForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('comunity')
+    else:
+        form = ComunityForm()
 
     context = {'title': 'Registro de Comunity', 'form':form}
     return render(request, 'comunidad/comunity/comunityRegister.html', context)
 
 
+def comunityProfile(request, pk):
+    comunity = get_object_or_404(Comunity, id=pk)
+
+    context = {'title':'Comunity', 'comunity':comunity}
+    return render(request, 'comunidad/comunity/comunityProfile.html', context)
+
+
 # --------------- EMPRESAS ------------------
 def company(request):
-    empresas = Empresa.objects.all()
+    empresas = Company.objects.all()
     
     context = {'title': 'Empresas', 'empresas':empresas}
     return render(request, 'comunidad/company/company.html', context)
 
 
 def companyRegister(request):
-    form = EmpresaForm()
+    if request.method == 'POST':
+        form = CompanyForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('company')
+    else:
+        form = CompanyForm()
 
     context = {'title': 'Registro de Empresas', 'form':form}
     return render(request, 'comunidad/company/companyRegister.html', context)
+
+
+def companyProfile(request, pk):
+    empresa = get_object_or_404(Company, id=pk)
+
+    context = {'title':'Comunity', 'empresa':empresa}
+    return render(request, 'comunidad/company/companyProfile.html', context)

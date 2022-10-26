@@ -6,84 +6,87 @@
     <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
     <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
 </div>
+
 <div class="col-12 mx-auto  c">
-    <img src="{{ user.profile.image.url }}" class="pt-2 pb-3" alt="">
+    
 
     <div class="col-11 mx-auto c">
-        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+        <h2>{{ comunity.name }}</h2>
     </div>
 
     <div class="col-11 mx-auto">
+        <img src="{{ comunity.Logo.url }}" class="pt-2 pb-3" alt="">
+
         <div class="col-9 mx-auto mb-4 ">
             <h3>Detalles</h3>
-            <p class="txtalig c">{{ user.profile.summary }}</p>
-            <p class="txtalig c">{{ user.profile.information }}</p>
+            <p class="txtalig c">{{ comunity.summary }}</p>
+            <p class="txtalig c">{{ comunity.information }}</p>
         </div>
+
+        <img src="{{ comunity.image.url }}" class="col-8 pt-2 pb-3" alt="">
 
         <div class="col-11 mx-auto mb-5 row">
             <div class="col-6 ">
                 <h5>Contacto</h5>
-                {% if user.profile.sharePhone == True %}
-                    <h4>{{ user.profile.phone }}</h4>
-                {% endif %}
-                <h4>{{ user.email }}</h4>
+                <h4>{{ comunity.phone }}</h4>
+                <h4>{{ comunity.email }}</h4>
             </div>
             <div class="col-6 ">
                 <h5>Localizacion</h5>
-                <h4>{{ user.profile.city }}</h4>
-                <h4>{{ user.profile.country }}</h4>
+                <h4>{{ comunity.city }}</h4>
+                <h4>{{ comunity.country }}</h4>
             </div>
         </div>
 
         <div class="col-11 mx-auto row">
-            {% if user.profile.github %}
+            {% if comunity.github %}
             <div class="col-3 mb-3">
-                github:<br> {{ user.profile.github }}
+                github:<br> {{ comunity.github }}
             </div>
             {% endif %}
-            {% if user.profile.telegram %}
+            {% if comunity.telegram %}
             <div class="col-3 mb-3">
-                telegram:<br>  {{ user.profile.telegram }}
+                telegram:<br>  {{ comunity.telegram }}
             </div>
             {% endif %}
-            {% if user.profile.twitter %}
+            {% if comunity.twitter %}
             <div class="col-3 mb-3">
-                twitter:<br>  {{ user.profile.twitter }}
+                twitter:<br>  {{ comunity.twitter }}
             </div>
             {% endif %}
-            {% if user.profile.linkedin %}
+            {% if comunity.linkedin %}
             <div class="col-3 mb-3">
-                linkedin:<br>  {{ user.profile.linkedin }}
+                linkedin:<br>  {{ comunity.linkedin }}
             </div>
             {% endif %}
-            {% if user.profile.facebook %}
+            {% if comunity.facebook %}
             <div class="col-3 mb-3">
-                facebook:<br>  {{ user.profile.facebook }}
+                facebook:<br>  {{ comunity.facebook }}
             </div>
             {% endif %}
-            {% if user.profile.instagram %}
+            {% if comunity.instagram %}
             <div class="col-3 mb-3">
-                instagram:<br>  {{ user.profile.instagram }}
+                instagram:<br>  {{ comunity.instagram }}
             </div>
             {% endif %}
-            {% if user.profile.slack %}
+            {% if comunity.slack %}
             <div class="col-3 mb-3">
-                slack:<br>  {{ user.profile.slack }}
+                slack:<br>  {{ comunity.slack }}
             </div>
             {% endif %}
-            {% if user.profile.googlePlus %}
+            {% if comunity.googlePlus %}
             <div class="col-3 mb-3">
-                googlePlus:<br>  {{ user.profile.googlePlus }}
+                googlePlus:<br>  {{ comunity.googlePlus }}
             </div>
             {% endif %}
-            {% if user.profile.medium %}
+            {% if comunity.medium %}
             <div class="col-3 mb-3">
-                medium:<br>  {{ user.profile.medium }}
+                medium:<br>  {{ comunity.medium }}
             </div>
             {% endif %}
-            {% if user.profile.meetup %}
+            {% if comunity.meetup %}
             <div class="col-3 mb-3">
-                meetup:<br>  {{ user.profile.meetup }}
+                meetup:<br>  {{ comunity.meetup }}
             </div>
             {% endif %}
         </div>

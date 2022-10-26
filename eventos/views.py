@@ -22,7 +22,7 @@ def eventos(request):
     return render(request, 'eventos/eventos.html', context)
 
 
-def crearEvento(request, methods="POST"):
+def crearEvento(request):
 
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES)

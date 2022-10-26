@@ -47,41 +47,41 @@ class Profile(models.Model):
         return reverse("profile", kwargs={"pk": self.pk})
 
 
-class Comunidad(models.Model):
+class Comunity(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False)
     encargado = models.CharField(max_length=100, null=False, blank=False)
     phone = models.CharField(max_length=20, null=False, blank=False)
     email = models.EmailField(max_length=100, null=False, blank=False)
     summary = models.CharField(max_length=1600, blank=True, null=True)
     information = models.TextField(null=False, blank=False)
-    longitud = models.CharField(max_length=100, null=False, blank=False)
-    latitud = models.CharField(max_length=100, null=False, blank=False)
+    longitud = models.DecimalField(max_digits=16, decimal_places=14, blank=True, null=True)
+    latitud = models.DecimalField(max_digits=16, decimal_places=14, blank=True, null=True)
     city = models.CharField(max_length=80, blank=True, null=True, default='Bogotá')
     state = models.CharField(max_length=80, blank=True, null=True, default='Bogotá D.C.')
     country = models.CharField(max_length=80, blank=True, null=True, default='Colombia')
-    twitter = models.CharField(max_length=100, null=False, blank=False)
-    linkedin = models.CharField(max_length=100, null=False, blank=False)
-    facebook = models.CharField(max_length=100, null=False, blank=False)
-    instagram = models.CharField(max_length=100, null=False, blank=False)
-    telegram = models.CharField(max_length=100, null=False, blank=False)
-    slack = models.CharField(max_length=100, null=False, blank=False)
-    googlePlus = models.CharField(max_length=100, null=False, blank=False)
-    medium = models.CharField(max_length=100, null=False, blank=False)
-    meetup = models.CharField(max_length=100, null=False, blank=False)
-    web = models.CharField(max_length=100, null=False, blank=False)
+    twitter = models.CharField(max_length=100, null=True, blank=True)
+    linkedin = models.CharField(max_length=100, null=True, blank=True)
+    facebook = models.CharField(max_length=100, null=True, blank=True)
+    instagram = models.CharField(max_length=100, null=True, blank=True)
+    telegram = models.CharField(max_length=100, null=True, blank=True)
+    slack = models.CharField(max_length=100, null=True, blank=True)
+    googlePlus = models.CharField(max_length=100, null=True, blank=True)
+    medium = models.CharField(max_length=100, null=True, blank=True)
+    meetup = models.CharField(max_length=100, null=True, blank=True)
+    web = models.CharField(max_length=100, null=True, blank=True)
     dob = models.DateField(auto_now_add=True,)
-    Logo = models.ImageField(default='MEDIA/comunity/default.png', upload_to='img/comunity')
-    image = models.ImageField(default='MEDIA/comunity/default.png', upload_to='img/comunity')
+    Logo = ResizedImageField(size=[300, 300], upload_to='communities', blank=True, null=True, default='communities/logoDefault.png')
+    image = ResizedImageField(size=[800, 600], upload_to='communities', blank=True, null=True, default='communities/default.png')
 
     def __str__(self):
         return self.name
 
 
-    def get_comunity_absolute_url(self):
-        return reverse("comunity", kwargs={"pk": self.pk})
+    def get_absolute_url(self):
+        return reverse("comunityProfile", kwargs={"pk": self.pk})
 
 
-class Empresa(models.Model):
+class Company(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False)
     encargado = models.CharField(max_length=100, null=False, blank=False)
     phone = models.CharField(max_length=20, null=False, blank=False)
@@ -89,28 +89,28 @@ class Empresa(models.Model):
     summary = models.CharField(max_length=1600, blank=True, null=True)
     information = models.TextField(null=False, blank=False)
     category = models.CharField(max_length=50, blank=True, null=True, default='Empresa', choices=CATEGORY)
-    longitud = models.CharField(max_length=100, null=False, blank=False)
-    latitud = models.CharField(max_length=100, null=False, blank=False)
+    longitud = models.DecimalField(max_digits=16, decimal_places=14, blank=True, null=True)
+    latitud = models.DecimalField(max_digits=16, decimal_places=14, blank=True, null=True)
     city = models.CharField(max_length=80, blank=True, null=True, default='Bogotá')
     state = models.CharField(max_length=80, blank=True, null=True, default='Bogotá D.C.')
     country = models.CharField(max_length=80, blank=True, null=True, default='Colombia')
-    twitter = models.CharField(max_length=100, null=False, blank=False)
-    linkedin = models.CharField(max_length=100, null=False, blank=False)
-    facebook = models.CharField(max_length=100, null=False, blank=False)
-    instagram = models.CharField(max_length=100, null=False, blank=False)
-    telegram = models.CharField(max_length=100, null=False, blank=False)
-    slack = models.CharField(max_length=100, null=False, blank=False)
-    googlePlus = models.CharField(max_length=100, null=False, blank=False)
-    medium = models.CharField(max_length=100, null=False, blank=False)
-    meetup = models.CharField(max_length=100, null=False, blank=False)
-    web = models.CharField(max_length=100, null=False, blank=False)
+    twitter = models.CharField(max_length=100, null=True, blank=True)
+    linkedin = models.CharField(max_length=100, null=True, blank=True)
+    facebook = models.CharField(max_length=100, null=True, blank=True)
+    instagram = models.CharField(max_length=100, null=True, blank=True)
+    telegram = models.CharField(max_length=100, null=True, blank=True)
+    slack = models.CharField(max_length=100, null=True, blank=True)
+    googlePlus = models.CharField(max_length=100, null=True, blank=True)
+    medium = models.CharField(max_length=100, null=True, blank=True)
+    meetup = models.CharField(max_length=100, null=True, blank=True)
+    web = models.CharField(max_length=100, null=True, blank=True)
     dob = models.DateField(auto_now_add=True,)
-    Logo = models.ImageField(default='MEDIA/companies/default.png', upload_to='img/companies')
-    image = models.ImageField(default='MEDIA/companies/default.png', upload_to='img/companies')
+    Logo = models.ImageField(default='media/companies/default.png', upload_to='img/companies')
+    image = models.ImageField(default='media/companies/default.png', upload_to='img/companies')
 
     def __str__(self):
         return self.name
 
 
     def get_people_absolute_url(self):
-        return reverse("profile", kwargs={"pk": self.pk})
+        return reverse("company", kwargs={"pk": self.pk})

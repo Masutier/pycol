@@ -24,22 +24,21 @@ class ProfileForm(ModelForm):
         }
 
 
-class ComunidadForm(ModelForm):
-
+class ComunityForm(ModelForm):
     #captcha = ReCaptchaField()
     class Meta:
-        model = Comunidad
+        model = Comunity
         fields = '__all__'
         widgets = {
             'information': Textarea(attrs={'rows':5, 'cols':45}),
         }
 
 
-class EmpresaForm(ModelForm):
+class CompanyForm(ModelForm):
     
     #captcha = ReCaptchaField()
     class Meta:
-        model = Empresa
+        model = Company
         fields = '__all__'
         widgets = {
             'information': Textarea(attrs={'rows':5, 'cols':45}),

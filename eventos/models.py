@@ -14,7 +14,7 @@ class Evento(models.Model):
     city = models.CharField(max_length=80, blank=True, null=True, default='Bogotá')
     state = models.CharField(max_length=80, blank=True, null=True, default='Bogotá D.C.')
     country = models.CharField(max_length=80, blank=True, null=True, default='Colombia')
-    longitud = models.DecimalField(max_digits=17, decimal_places=14, blank=True, null=True)
+    longitud = models.DecimalField(max_digits=16, decimal_places=14, blank=True, null=True)
     latitud = models.DecimalField(max_digits=16, decimal_places=14, blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)
     organiza = models.CharField(max_length=100, blank=True, null=True)

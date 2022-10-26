@@ -15,9 +15,11 @@ urlpatterns = [
 
     path('comunity', comunity, name='comunity'),
     path('comunityRegister', comunityRegister, name='comunityRegister'),
-
+    path('comunityProfile/<int:pk>', comunityProfile, name='comunityProfile'),
+    
     path('company', company, name='company'),
     path('companyRegister', companyRegister, name='companyRegister'),
+    path('companyProfile/<int:pk>', companyProfile, name='companyProfile'),
 
     path('password/reset_password/',
         auth_views.PasswordResetView.as_view(template_name='comunidad/people/password/password_reset.html'),

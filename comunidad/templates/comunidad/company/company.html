@@ -3,14 +3,139 @@
 {% block content %}
 
 <div class="col-12 mx-auto cont c">
+
     <img src="{% static '/img/icons/python-col-logo2.png' %}" class="pt-5 pb-3" alt="PYTHON" />
     <h2 class="pb-5">Comunidad de Desarrollo Tecnológico</h2>
+
 </div>
-<div class="col-12 mx-auto  c">
-    <h2>Companies</h2>
-    {% for empresa in empresas %}
-        <h3>empresa</h3>
-    {% endif %}
+
+<div class="col-12 mx-auto mt-4 c">
+    <h3 class="p-3">Listado de Empresas Aliadas</h3>
+</div>
+
+<div class="col-12 mt-4 mb-5">
+    <div class="col-11 mx-auto">
+        <div class="row row-cols-1 row-cols-md-5 g-4 mt-2">
+
+            {% for empresa in empresas %}
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-img-wrap">
+                            <img src="{{ empresa.image.url }}" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ empresa.name }}</h5>
+                            <p>{{ empresa.encargado }}</p>
+                            <small class="text-muted">Desde:  {{ empresa.dob }}</small><br>
+                            <a class="btn btn-dark btn-sm backbuttdark" type="button" href="{{ empresa.get_absolute_url }}">Mas Info</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-img-wrap">
+                        <img src="/static/MEDIA/companies/draconian2.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">PyLadies</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/Screenshot from 2022-07-29 12-39-36.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/Screenshot from 2022-10-14 11-36-12.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/1433282629785.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/draconian2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/Screenshot from 2022-07-29 12-39-36.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/Screenshot from 2022-10-14 11-36-12.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/1433282629785.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/draconian2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/Screenshot from 2022-07-29 12-39-36.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="/static/MEDIA/companies/Screenshot from 2022-10-14 11-36-12.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 {% endblock %}

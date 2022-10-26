@@ -175,17 +175,21 @@
         <div class="col-11 mx-auto">
             <div class="row row-cols-1 row-cols-md-5 g-4 mt-2">
 
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-img-wrap">
-                            <img src="/static/MEDIA/companies/1433282629785.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Python Bogota</h5>
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                {% for comunidad in comunidades %}
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-img-wrap">
+                                <img src="{{ comunidad.image.url }}" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ comunidad.name }}</h5>
+                                <p>{{ comunidad.encargado }}</p>
+                                <small class="text-muted">Desde:  {{ comunidad.dob }}</small><br>
+                                <a class="btn btn-dark btn-sm backbuttdark" type="button" href="{{ comunidad.get_absolute_url }}">Mas Info</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-img-wrap">
@@ -303,17 +307,21 @@
         <div class="col-11 mx-auto">
             <div class="row row-cols-1 row-cols-md-5 g-4 mt-2">
 
-                <div class="col">
-                    <div class="card h-100">
-                        <div class="card-img-wrap">
-                            <img src="/static/MEDIA/comunity/1433282629785.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Fundacion Ninos de los Andes</h5>
-                            <small class="text-muted">Last updated 3 mins ago</small>
+                {% for empresa in empresas %}
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-img-wrap">
+                                <img src="{{ empresa.image.url }}" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ empresa.name }}</h5>
+                                <p>{{ empresa.encargado }}</p>
+                                <small class="text-muted">Desde:  {{ empresa.dob }}</small><br>
+                                <a class="btn btn-dark btn-sm backbuttdark" type="button" href="{{ empresa.get_absolute_url }}">Mas Info</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-img-wrap">
