@@ -1,7 +1,7 @@
 import os
 import json
 from pathlib import Path
-from dotenv import load_dotenv
+
 
 with open('/home/gabriel/prog/json_config/pycol.json') as config_file:
     config = json.load(config_file)
@@ -115,9 +115,10 @@ SECURE_SSL_REDIRECT = False
 SECURE_HSTS_PRELOAD = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
-RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')
-RECAPTCHA_REQUIRED_SCORE = os.environ.get('RECAPTCHA_REQUIRED_SCORE')
+# start in comunidad forms
+# SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+# RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
+# RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')
+# RECAPTCHA_REQUIRED_SCORE = os.environ.get('RECAPTCHA_REQUIRED_SCORE')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

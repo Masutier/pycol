@@ -18,7 +18,9 @@ def eventos(request):
         else:
             eventos_pasados.append(record)
 
-    context = {'title': 'Eventos', 'eventos_actuales':eventos_actuales, 'eventos_pasados':eventos_pasados}
+    mess = "Lo sentimos pero en el momento no tenemos eventos"
+
+    context = {'title': 'Eventos', 'eventos_actuales':eventos_actuales, 'eventos_pasados':eventos_pasados, 'mess':mess}
     return render(request, 'eventos/eventos.html', context)
 
 

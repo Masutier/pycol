@@ -10,7 +10,20 @@
 <div class="col-12 mt-2">
     <div class="col-8 mx-auto p-2 ">
         <h3 class="p-3">Python Blog</h3>
-        <p class="txtalig">Siempre motivados a crecer mucho más y totalmente comprometidos a promover la diversidad y la inclusión en cada una de nuestras actividades y eventos.</p>
+        <p class="txtalig">Siempre motivados a crecer mucho más, creando mas contenido y totalmente comprometidos a promover la diversidad y la inclusión en cada una de nuestras actividades y eventos.</p>
+    </div>
+
+    <div class="col-12 mx-auto  c">
+        <h3 class="p-3">Temario</h3>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Tema 1</a>
+            <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Tema 2</a>
+            <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Tema 3</a>
+            <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Tema 4</a>
+            <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Tema 5</a>
+            <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Tema n</a>
+
+        </div>
     </div>
 
     <div class="col-12 mt-2 mb-5">
@@ -24,50 +37,39 @@
                         {% include 'blog/partials/card.html' %}
                     </a>
                 {% endfor %}
-
             </div>
             <div class="col-md-8 mx-auto mt-3">
-                <!-- {% if totalProducts > 12 %}
+                {% if totalProducts > 12 %}
                     {% include 'pycol/partials/pagination.html' %}
-                {% endif %} -->
-                {% include 'pycol/partials/pagination.html' %}
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
 
-<div class="col-12 row mt-2 p-4">
+<div class="col-12 mt-2 p-4">
     <div id="past" class="col-12 mx-auto">
         {% include 'blog/partials/blog_past.html' %}
     </div>
-    <div class="col-3">
-        <div class="col-12 mx-auto mt-5 c">
-            <h3 class="p-3">Temario</h3>
-            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
-                <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Eventos Proximos</a>
-                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
-                <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Eventos Proximos</a>
-                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
-                <a class="btn btn-dark backbuttdark" type="button" href="#tocome"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [5] Eventos Proximos</a>
-                <a class="btn btn-dark backbuttdark" type="button" href="#past"><img src="{% static '/img/icons/pyicon3a.png' %}" alt=""/> [225] Eventos Pasados</a>
 
-            </div>
-        </div>
-    </div>
+    
 
     <div class="col-9">
         <div class="col-12 mt-5 mb-5">
-
-                <div class="col-11 mx-auto">
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        {% for blog in oldBlogs %}
-                            <a class="a" href="{% url 'blogDetail' blog.slug %}">
-                                {% include 'blog/partials/card.html' %}
-                            </a>
-                        {% endfor %}
-                    </div>
+            <div class="col-11 mx-auto">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    {% for blog in oldBlogs %}
+                        <a class="a" href="{% url 'blogDetail' blog.slug %}">
+                            {% include 'blog/partials/card.html' %}
+                        </a>
+                    {% endfor %}
                 </div>
-
+                <div class="col-md-8 mx-auto mt-3">
+                    {% if totalProducts > 12 %}
+                        {% include 'pycol/partials/pagination.html' %}
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 </div>

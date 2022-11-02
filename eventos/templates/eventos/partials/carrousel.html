@@ -20,85 +20,34 @@
 
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
+        {% if eventos %}
 
         <!--First slide-->
-        <div class="carousel-item active">
-            {% for evento in eventos %}
-                <div class="col-md-3" style="float:left">
-                    <div class="card mb-2">
-                        <img class="card-img-top" src="{{ evento.picture.url }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ evento.title }}</h5>
-                            {{ evento.location }} <br>
-                            {{ evento.city }}, {{ evento.country }} <br>
-                            <small class="text-muted">end {{ evento.date_end | naturalday }}</small> <br>
-                            <a class="btn btn-dark backbuttdark mt-2" type="button" href="{{ evento.get_event_absolute_url }}">Detalle</a>
+            <div class="carousel-item active">
+                {% for evento in eventos %}
+                    <div class="col-md-3" style="float:left">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="{{ evento.picture.url }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ evento.title }}</h5>
+                                {{ evento.location }} <br>
+                                {{ evento.city }}, {{ evento.country }} <br>
+                                <small class="text-muted">end {{ evento.date_end | naturalday }}</small> <br>
+                                <a class="btn btn-dark backbuttdark mt-2" type="button" href="{{ evento.get_event_absolute_url }}">Detalle</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
 
-        </div>
+            </div>
         <!--/.First slide-->
+        {% else %}
 
-        <!--Second slide-->
-        <div class="carousel-item">
-
-            <div class="col-md-3" style="float:left">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-                    <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3" style="float:left">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                    <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3" style="float:left">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
-                    <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3" style="float:left">
-                <div class="card mb-2">
-                    <img class="card-img-top"
-                        src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
-                    <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </div>
-
+        <div class="col-12" >
+            <h4>{{ mess }}</h4>
         </div>
-        <!--/.Second slide-->
 
+        {% endif %}
     </div>
     <!--/.Slides-->
     <button class="carousel-control-prev bannbutt" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">

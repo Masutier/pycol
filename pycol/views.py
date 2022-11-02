@@ -23,7 +23,7 @@ def main(request):
         else:
             eventos = eventos_pasados
             
-        mess = "Lo sentimos pero en el momento no tenemos eventos pendientes"
+    mess = "Lo sentimos pero en el momento no tenemos eventos pendientes"
     
     context = {'title': 'Python Colombia', 'eventos':eventos, 'mess':mess}
     return render(request, 'pycol/main.html', context)

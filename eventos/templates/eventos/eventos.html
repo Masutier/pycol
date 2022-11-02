@@ -39,6 +39,7 @@
         </div>
 
         <div class="col-11 mx-auto">
+            {% if eventos_actuales %}
             <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
 
                 {% for evento in eventos_actuales %}
@@ -62,6 +63,14 @@
                 {% endfor %}
 
             </div>
+            {% else %}
+
+                <div class="col-12" >
+                    <h4>{{ mess }}</h4>
+                </div>
+
+            {% endif %}
+
         </div>
     </div>
 </div>
@@ -74,8 +83,8 @@
         </div>
 
         <div class="col-11 mx-auto">
+            {% if eventos_pasados %}
             <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
-
                 {% for evento in eventos_pasados %}
                     <div class="card mb-3 ms-2" >
                         <div class="row g-0">
@@ -94,8 +103,15 @@
                         </div>
                     </div>
                 {% endfor %}
-
             </div>
+            {% else %}
+
+                <div class="col-12" >
+                    <h4>{{ mess }}</h4>
+                </div>
+
+            {% endif %}
+
         </div>
     </div>
 </div>
