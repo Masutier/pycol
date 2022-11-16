@@ -1,7 +1,9 @@
 venv
 venv/*
-
 .env
-
 pycol_db
-
+__pycache__
+blog/__pycache__
+comunidad/__pycache__
+eventos/__pycache__
+pycol/__pycache__
